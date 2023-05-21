@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+	<title>Document</title>
+	<style>
+		.btn{
+			padding: 10px;
+            font-size: 18px;
+		}
+		.calc{
+			text-align: center;
+		}
+		#place{
+			padding: 10px;
+			border-radius:10px;
+			border: none;
+		}
+		body{
+			background-color: #fffbdb;
+			font-family: Montserrat;
+		}
+		.conteiner{
+			width:300px;
+			height:400px;
+			background-color: #493B2A;
+			position: absolute;
+			top:20%;
+			right: 43%;
+			padding: 10px;
+			border-radius: 10px;
+			
+		}
+
+		@media screen and (max-width:375px) {
+			.conteiner{
+			width:200px;
+			height:400px;
+			background-color: #493B2A;
+			position: absolute;
+			top:20%;
+			right: 23%;
+			padding: 10px;
+			border-radius: 10px;}
+
+		}
+		@media screen and (max-width:450px) {
+			.conteiner{
+			width:200px;
+			height:400px;
+			background-color: #493B2A;
+			position: absolute;
+			top:20%;
+			right: 23%;
+			padding: 10px;
+			border-radius: 10px;}
+
+		}		
+		@media screen and (only-width:820px) {
+			.conteiner{
+			width:20px;
+			height:400px;
+			background-color: #493B2A;
+			position: absolute;
+			top:20%;
+			right: 40%;
+			padding: 10px;
+			border-radius: 10px;}
+
+		}
+	</style>
+</head>
+<body>
+<div class="conteiner">	
+<header>
+	<h1 style="text-align:center; color: #ffffff;">Calculadora</h1>
+</header>
+<div class="calc">
+	<input type="text" id="place" >
+	<hr>
+<section >
+	<button class="btn" onclick="appendButton(7)">7</button>
+	<button class="btn" onclick="appendButton(8)">8</button>
+	<button class="btn" onclick="appendButton(9)">9</button>
+	<button class="btn" onclick="appendFunction('/')">/</button><br><br>
+	<button class="btn" onclick="appendButton(4)">4</button>
+	<button class="btn" onclick="appendButton(5)">5</button>
+	<button class="btn" onclick="appendButton(6)">6</button>
+	<button class="btn" onclick="appendFunction('*')">*</button><br><br>
+	<button class="btn" onclick="appendButton(1)">1</button>
+	<button class="btn" onclick="appendButton(2)">2</button>
+	<button class="btn" onclick="appendButton(3)">3</button>
+	<button class="btn" onclick="appendFunction('-')">-</button><br><br>
+	<button class="btn" onclick="clearButton()">C</button>
+	<button class="btn" onclick="appendButton(0)">0</button>
+	<button class="btn" onclick="finalResult('=')">=</button>
+	<button class="btn" onclick="appendFunction('+')">+</button><br><br>
+
+
+</section>
+</div>
+</div>
+	
+<script>
+	var n='';
+	var nPlace='';
+	var fun='';
+	var placeNumber=document.getElementById("place");
+
+function appendButton(number){
+	 nPlace+=number;
+	 placeNumber.value = nPlace;
+	}
+
+function appendFunction(op){
+	fun=op;
+	n=nPlace;
+	nPlace='';
+}
+
+function finalResult(){
+	var resultado;
+	switch(fun){
+		case '+':
+			resultado = parseFloat(n) + parseFloat(nPlace);
+			break;
+	   
+	    case '-':
+			resultado = parseFloat(n) - parseFloat(nPlace);
+			break;
+
+		case '*':
+			resultado = parseFloat(n) * parseFloat(nPlace);
+			break;
+
+		case '/':
+			resultado = parseFloat(n) / parseFloat(nPlace);
+			break;
+	}
+    placeNumber.value = resultado;
+    //n='';
+    //nPlace='';
+}
+
+function clearButton(){
+	fun='';
+	n='';
+	resultado='';
+	nPlace='';
+	placeNumber.value='';
+}
+</script>
+
+</body>
+</html>
