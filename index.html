@@ -2,15 +2,16 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 	<title>Document</title>
 	<style>
-		.btn{   padding: 4%;
-                        font-size: 1.3em;
-            
+		.btn{
+			padding: 4%;
+            font-size: 1.3em;
 		}
 		.calc{
 			text-align: center;
@@ -19,10 +20,12 @@
 			padding: 10px;
 			border-radius:10px;
 			border: none;
+			width: 80%;
 		}
 		body{
 			background-color: #fffbdb;
 			font-family: Montserrat;
+			font-size: 1em;
 		}
 		.conteiner{
 			width:300px;
@@ -35,10 +38,11 @@
 			border-radius: 10px;
 			
 		}
+		
 
 		@media screen and (max-width:375px) {
 			.conteiner{
-			width:80%;
+			width:300px;
 			height:400px;
 			background-color: #493B2A;
 			position: absolute;
@@ -50,7 +54,7 @@
 		}
 		@media screen and (max-width:450px) {
 			.conteiner{
-			width:80%;
+			width:200px;
 			height:400px;
 			background-color: #493B2A;
 			position: absolute;
@@ -60,16 +64,20 @@
 			border-radius: 10px;}
 
 		}		
-		@media screen and (only-width:820px) {
+		@media screen and (max-width:820px) {
 			.conteiner{
-			width:20px;
-			height:400px;
+			width:50%;
+			height:450px;
 			background-color: #493B2A;
 			position: absolute;
 			top:20%;
-			right: 40%;
+			right:22%;
 			padding: 10px;
 			border-radius: 10px;}
+
+			h1{
+			   font: size 2.5vw; ;
+			}
 
 		}
 	</style>
@@ -80,7 +88,7 @@
 	<h1 style="text-align:center; color: #ffffff;">Calculadora</h1>
 </header>
 <div class="calc">
-	<input type="text" id="place" >
+	<input type="text" id="place" placeholder="00" >
 	<hr>
 <section >
 	<button class="btn" onclick="appendButton(7)">7</button>
